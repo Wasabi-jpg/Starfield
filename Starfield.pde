@@ -2,6 +2,7 @@
 void setup()
 {
 	//your code here
+	size(500,500);
 }
 void draw()
 {
@@ -13,7 +14,11 @@ class Particle
 	double x, y, angle, speed;
 	int Color;
 	Particle(){
-		
+		x=250;
+		y=250;
+		angle = Math.random()*2*Math.PI;
+		speed = (int)(Math.random()*10)+1;
+
 	}
 }
 
