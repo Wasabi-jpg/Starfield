@@ -1,8 +1,10 @@
 //your code here
 Particle [] one;
+
 void setup()
 {
 	//your code here
+	
 	size(500,500);
 	one = new Particle[1000];
 	for(int i=0; i<one.length; i++){
@@ -40,16 +42,19 @@ class Particle
 	void move(){
 		x = Math.cos(angle)*speed +x;
 		y = Math.sin(angle)*speed +y;
-		if(x == 0 || x == 500){
-			x = 250;
-		}
-		if(y==0||y==500){
-			y=250;
+		if(x < 0 || x > 500){
+			if(y<0||y>500){
+				x = 250;
+				y =250;
+				angle = Math.random()*(2*Math.PI);
+				speed = (Math.random()*7)+1;
+			}
 		}
 	}
 	void show(){
 		fill(theColor);
 		ellipse((float)x,(float)y,5,5);
+
 	}
 }
 
